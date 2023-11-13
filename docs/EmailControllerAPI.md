@@ -39,7 +39,7 @@ Method | HTTP request | Description
 
 # **applyImapFlagOperation**
 ```swift
-    open class func applyImapFlagOperation( emailId: UUID,  imapFlagOperationOptions: ImapFlagOperationOptions) -> Promise<EmailPreview>
+    open class func applyImapFlagOperation( emailId: UUID,  imapFlagOperationOptions: ImapFlagOperationOptions) -> Promise<MSEmailPreview>
 ```
 
 Set IMAP flags associated with a message. Only supports '\\Seen' flag.
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EmailPreview**](EmailPreview)
+[**MSEmailPreview**](MSEmailPreview)
 
 ### Authorization
 
@@ -1349,7 +1349,7 @@ This endpoint does not need any parameter.
 
 # **markAsRead**
 ```swift
-    open class func markAsRead( emailId: UUID,  read: Bool? = nil) -> Promise<EmailPreview>
+    open class func markAsRead( emailId: UUID,  read: Bool? = nil) -> Promise<MSEmailPreview>
 ```
 
 Mark an email as read on unread
@@ -1383,7 +1383,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EmailPreview**](EmailPreview)
+[**MSEmailPreview**](MSEmailPreview)
 
 ### Authorization
 

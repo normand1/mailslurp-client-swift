@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 # **waitFor**
 ```swift
-    open class func waitFor( waitForConditions: WaitForConditions) -> Promise<[EmailPreview]>
+    open class func waitFor( waitForConditions: WaitForConditions) -> Promise<[MSEmailPreview]>
 ```
 
 Wait for an email to match the provided filter conditions such as subject contains keyword.
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[EmailPreview]**](EmailPreview)
+[**[MSEmailPreview]**](MSEmailPreview)
 
 ### Authorization
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 # **waitForEmailCount**
 ```swift
-    open class func waitForEmailCount( inboxId: UUID,  count: Int,  timeout: Int64? = nil,  unreadOnly: Bool? = nil,  before: Date? = nil,  since: Date? = nil,  sort: Sort_waitForEmailCount? = nil,  delay: Int64? = nil) -> Promise<[EmailPreview]>
+    open class func waitForEmailCount( inboxId: UUID,  count: Int,  timeout: Int64? = nil,  unreadOnly: Bool? = nil,  before: Date? = nil,  since: Date? = nil,  sort: Sort_waitForEmailCount? = nil,  delay: Int64? = nil) -> Promise<[MSEmailPreview]>
 ```
 
 Wait for and return count number of emails. Hold connection until inbox count matches expected or timeout occurs
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[EmailPreview]**](EmailPreview)
+[**[MSEmailPreview]**](MSEmailPreview)
 
 ### Authorization
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 # **waitForMatchingEmails**
 ```swift
-    open class func waitForMatchingEmails( inboxId: UUID,  count: Int,  matchOptions: MatchOptions,  before: Date? = nil,  since: Date? = nil,  sort: Sort_waitForMatchingEmails? = nil,  delay: Int64? = nil,  timeout: Int64? = nil,  unreadOnly: Bool? = nil) -> Promise<[EmailPreview]>
+    open class func waitForMatchingEmails( inboxId: UUID,  count: Int,  matchOptions: MatchOptions,  before: Date? = nil,  since: Date? = nil,  sort: Sort_waitForMatchingEmails? = nil,  delay: Int64? = nil,  timeout: Int64? = nil,  unreadOnly: Bool? = nil) -> Promise<[MSEmailPreview]>
 ```
 
 Wait or return list of emails that match simple matching patterns
@@ -278,7 +278,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[EmailPreview]**](EmailPreview)
+[**[MSEmailPreview]**](MSEmailPreview)
 
 ### Authorization
 

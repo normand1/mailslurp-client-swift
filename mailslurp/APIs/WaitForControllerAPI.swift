@@ -17,10 +17,10 @@ import AnyCodable
      Wait for an email to match the provided filter conditions such as subject contains keyword.
      
      - parameter waitForConditions: (body)  
-     - returns: Promise<[EmailPreview]>
+     - returns: Promise<[MSEmailPreview]>
      */
-    open class func waitFor( waitForConditions: WaitForConditions) -> Promise<[EmailPreview]> {
-        let deferred = Promise<[EmailPreview]>.pending()
+    open class func waitFor( waitForConditions: WaitForConditions) -> Promise<[MSEmailPreview]> {
+        let deferred = Promise<[MSEmailPreview]>.pending()
         waitForWithRequestBuilder(waitForConditions: waitForConditions).execute { result in
             switch result {
             case let .success(response):
@@ -40,9 +40,9 @@ import AnyCodable
        - type: apiKey x-api-key 
        - name: API_KEY
      - parameter waitForConditions: (body)  
-     - returns: RequestBuilder<[EmailPreview]> 
+     - returns: RequestBuilder<[MSEmailPreview]> 
      */
-    open class func waitForWithRequestBuilder(waitForConditions: WaitForConditions) -> RequestBuilder<[EmailPreview]> {
+    open class func waitForWithRequestBuilder(waitForConditions: WaitForConditions) -> RequestBuilder<[MSEmailPreview]> {
         let localVariablePath = "/waitFor"
         let localVariableURLString = mailslurpAPI.basePath + localVariablePath
         let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: waitForConditions)
@@ -55,7 +55,7 @@ import AnyCodable
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<[EmailPreview]>.Type = mailslurpAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<[MSEmailPreview]>.Type = mailslurpAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
@@ -79,10 +79,10 @@ import AnyCodable
      - parameter since: (query) Filter for emails that were received after the given timestamp (optional)
      - parameter sort: (query) Sort direction (optional)
      - parameter delay: (query) Max milliseconds delay between calls (optional)
-     - returns: Promise<[EmailPreview]>
+     - returns: Promise<[MSEmailPreview]>
      */
-    open class func waitForEmailCount( inboxId: UUID,  count: Int,  timeout: Int64? = nil,  unreadOnly: Bool? = nil,  before: Date? = nil,  since: Date? = nil,  sort: Sort_waitForEmailCount? = nil,  delay: Int64? = nil) -> Promise<[EmailPreview]> {
-        let deferred = Promise<[EmailPreview]>.pending()
+    open class func waitForEmailCount( inboxId: UUID,  count: Int,  timeout: Int64? = nil,  unreadOnly: Bool? = nil,  before: Date? = nil,  since: Date? = nil,  sort: Sort_waitForEmailCount? = nil,  delay: Int64? = nil) -> Promise<[MSEmailPreview]> {
+        let deferred = Promise<[MSEmailPreview]>.pending()
         waitForEmailCountWithRequestBuilder(inboxId: inboxId, count: count, timeout: timeout, unreadOnly: unreadOnly, before: before, since: since, sort: sort, delay: delay).execute { result in
             switch result {
             case let .success(response):
@@ -109,9 +109,9 @@ import AnyCodable
      - parameter since: (query) Filter for emails that were received after the given timestamp (optional)
      - parameter sort: (query) Sort direction (optional)
      - parameter delay: (query) Max milliseconds delay between calls (optional)
-     - returns: RequestBuilder<[EmailPreview]> 
+     - returns: RequestBuilder<[MSEmailPreview]> 
      */
-    open class func waitForEmailCountWithRequestBuilder(inboxId: UUID, count: Int, timeout: Int64? = nil, unreadOnly: Bool? = nil, before: Date? = nil, since: Date? = nil, sort: Sort_waitForEmailCount? = nil, delay: Int64? = nil) -> RequestBuilder<[EmailPreview]> {
+    open class func waitForEmailCountWithRequestBuilder(inboxId: UUID, count: Int, timeout: Int64? = nil, unreadOnly: Bool? = nil, before: Date? = nil, since: Date? = nil, sort: Sort_waitForEmailCount? = nil, delay: Int64? = nil) -> RequestBuilder<[MSEmailPreview]> {
         let localVariablePath = "/waitForEmailCount"
         let localVariableURLString = mailslurpAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -134,7 +134,7 @@ import AnyCodable
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<[EmailPreview]>.Type = mailslurpAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<[MSEmailPreview]>.Type = mailslurpAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
@@ -282,10 +282,10 @@ import AnyCodable
      - parameter delay: (query) Max milliseconds delay between calls (optional)
      - parameter timeout: (query) Max milliseconds to wait (optional)
      - parameter unreadOnly: (query) Optional filter for unread only (optional, default to false)
-     - returns: Promise<[EmailPreview]>
+     - returns: Promise<[MSEmailPreview]>
      */
-    open class func waitForMatchingEmails( inboxId: UUID,  count: Int,  matchOptions: MatchOptions,  before: Date? = nil,  since: Date? = nil,  sort: Sort_waitForMatchingEmails? = nil,  delay: Int64? = nil,  timeout: Int64? = nil,  unreadOnly: Bool? = nil) -> Promise<[EmailPreview]> {
-        let deferred = Promise<[EmailPreview]>.pending()
+    open class func waitForMatchingEmails( inboxId: UUID,  count: Int,  matchOptions: MatchOptions,  before: Date? = nil,  since: Date? = nil,  sort: Sort_waitForMatchingEmails? = nil,  delay: Int64? = nil,  timeout: Int64? = nil,  unreadOnly: Bool? = nil) -> Promise<[MSEmailPreview]> {
+        let deferred = Promise<[MSEmailPreview]>.pending()
         waitForMatchingEmailsWithRequestBuilder(inboxId: inboxId, count: count, matchOptions: matchOptions, before: before, since: since, sort: sort, delay: delay, timeout: timeout, unreadOnly: unreadOnly).execute { result in
             switch result {
             case let .success(response):
@@ -313,9 +313,9 @@ import AnyCodable
      - parameter delay: (query) Max milliseconds delay between calls (optional)
      - parameter timeout: (query) Max milliseconds to wait (optional)
      - parameter unreadOnly: (query) Optional filter for unread only (optional, default to false)
-     - returns: RequestBuilder<[EmailPreview]> 
+     - returns: RequestBuilder<[MSEmailPreview]> 
      */
-    open class func waitForMatchingEmailsWithRequestBuilder(inboxId: UUID, count: Int, matchOptions: MatchOptions, before: Date? = nil, since: Date? = nil, sort: Sort_waitForMatchingEmails? = nil, delay: Int64? = nil, timeout: Int64? = nil, unreadOnly: Bool? = nil) -> RequestBuilder<[EmailPreview]> {
+    open class func waitForMatchingEmailsWithRequestBuilder(inboxId: UUID, count: Int, matchOptions: MatchOptions, before: Date? = nil, since: Date? = nil, sort: Sort_waitForMatchingEmails? = nil, delay: Int64? = nil, timeout: Int64? = nil, unreadOnly: Bool? = nil) -> RequestBuilder<[MSEmailPreview]> {
         let localVariablePath = "/waitForMatchingEmails"
         let localVariableURLString = mailslurpAPI.basePath + localVariablePath
         let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: matchOptions)
@@ -338,7 +338,7 @@ import AnyCodable
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<[EmailPreview]>.Type = mailslurpAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<[MSEmailPreview]>.Type = mailslurpAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }

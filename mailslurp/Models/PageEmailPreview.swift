@@ -13,7 +13,7 @@ import AnyCodable
 /** Paginated email preview results. EmailProjections and EmailPreviews are essentially the same but have legacy naming issues. Page index starts at zero. Projection results may omit larger entity fields. For fetching a full entity use the projection ID with individual method calls. For emails there are several methods for fetching message bodies and attachments. */
 @objc public class PageEmailPreview: NSObject, Codable, JSONEncodable {
 
-    public var content: [EmailPreview]?
+    public var content: [MSEmailPreview]?
     public var pageable: PageableObject?
     public var total: Int64?
     public var totalNum: NSNumber? {
@@ -71,7 +71,7 @@ import AnyCodable
         }
     }
 
-    public init(content: [EmailPreview]? = nil, pageable: PageableObject? = nil, total: Int64? = nil, totalElements: Int64? = nil, totalPages: Int? = nil, last: Bool? = nil, size: Int? = nil, number: Int? = nil, sort: Sort? = nil, numberOfElements: Int? = nil, first: Bool? = nil, empty: Bool? = nil) {
+    public init(content: [MSEmailPreview]? = nil, pageable: PageableObject? = nil, total: Int64? = nil, totalElements: Int64? = nil, totalPages: Int? = nil, last: Bool? = nil, size: Int? = nil, number: Int? = nil, sort: Sort? = nil, numberOfElements: Int? = nil, first: Bool? = nil, empty: Bool? = nil) {
         self.content = content
         self.pageable = pageable
         self.total = total

@@ -961,10 +961,10 @@ import AnyCodable
      - parameter unreadOnly: (query)  (optional)
      - parameter before: (query) Exclude emails received after this ISO 8601 date time (optional)
      - parameter since: (query) Exclude emails received before this ISO 8601 date time (optional)
-     - returns: Promise<[EmailPreview]>
+     - returns: Promise<[MSEmailPreview]>
      */
-    open class func getEmails( inboxId: UUID,  size: Int? = nil,  limit: Int? = nil,  sort: Sort_getEmails? = nil,  retryTimeout: Int64? = nil,  delayTimeout: Int64? = nil,  minCount: Int64? = nil,  unreadOnly: Bool? = nil,  before: Date? = nil,  since: Date? = nil) -> Promise<[EmailPreview]> {
-        let deferred = Promise<[EmailPreview]>.pending()
+    open class func getEmails( inboxId: UUID,  size: Int? = nil,  limit: Int? = nil,  sort: Sort_getEmails? = nil,  retryTimeout: Int64? = nil,  delayTimeout: Int64? = nil,  minCount: Int64? = nil,  unreadOnly: Bool? = nil,  before: Date? = nil,  since: Date? = nil) -> Promise<[MSEmailPreview]> {
+        let deferred = Promise<[MSEmailPreview]>.pending()
         getEmailsWithRequestBuilder(inboxId: inboxId, size: size, limit: limit, sort: sort, retryTimeout: retryTimeout, delayTimeout: delayTimeout, minCount: minCount, unreadOnly: unreadOnly, before: before, since: since).execute { result in
             switch result {
             case let .success(response):
@@ -993,9 +993,9 @@ import AnyCodable
      - parameter unreadOnly: (query)  (optional)
      - parameter before: (query) Exclude emails received after this ISO 8601 date time (optional)
      - parameter since: (query) Exclude emails received before this ISO 8601 date time (optional)
-     - returns: RequestBuilder<[EmailPreview]> 
+     - returns: RequestBuilder<[MSEmailPreview]> 
      */
-    open class func getEmailsWithRequestBuilder(inboxId: UUID, size: Int? = nil, limit: Int? = nil, sort: Sort_getEmails? = nil, retryTimeout: Int64? = nil, delayTimeout: Int64? = nil, minCount: Int64? = nil, unreadOnly: Bool? = nil, before: Date? = nil, since: Date? = nil) -> RequestBuilder<[EmailPreview]> {
+    open class func getEmailsWithRequestBuilder(inboxId: UUID, size: Int? = nil, limit: Int? = nil, sort: Sort_getEmails? = nil, retryTimeout: Int64? = nil, delayTimeout: Int64? = nil, minCount: Int64? = nil, unreadOnly: Bool? = nil, before: Date? = nil, since: Date? = nil) -> RequestBuilder<[MSEmailPreview]> {
         var localVariablePath = "/inboxes/{inboxId}/emails"
         let inboxIdPreEscape = "\(APIHelper.mapValueToPathItem(inboxId))"
         let inboxIdPostEscape = inboxIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -1022,7 +1022,7 @@ import AnyCodable
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<[EmailPreview]>.Type = mailslurpAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<[MSEmailPreview]>.Type = mailslurpAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }

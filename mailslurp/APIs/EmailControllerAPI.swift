@@ -18,10 +18,10 @@ import AnyCodable
      
      - parameter emailId: (path)  
      - parameter imapFlagOperationOptions: (body)  
-     - returns: Promise<EmailPreview>
+     - returns: Promise<MSEmailPreview>
      */
-    open class func applyImapFlagOperation( emailId: UUID,  imapFlagOperationOptions: ImapFlagOperationOptions) -> Promise<EmailPreview> {
-        let deferred = Promise<EmailPreview>.pending()
+    open class func applyImapFlagOperation( emailId: UUID,  imapFlagOperationOptions: ImapFlagOperationOptions) -> Promise<MSEmailPreview> {
+        let deferred = Promise<MSEmailPreview>.pending()
         applyImapFlagOperationWithRequestBuilder(emailId: emailId, imapFlagOperationOptions: imapFlagOperationOptions).execute { result in
             switch result {
             case let .success(response):
@@ -42,9 +42,9 @@ import AnyCodable
        - name: API_KEY
      - parameter emailId: (path)  
      - parameter imapFlagOperationOptions: (body)  
-     - returns: RequestBuilder<EmailPreview> 
+     - returns: RequestBuilder<MSEmailPreview> 
      */
-    open class func applyImapFlagOperationWithRequestBuilder(emailId: UUID, imapFlagOperationOptions: ImapFlagOperationOptions) -> RequestBuilder<EmailPreview> {
+    open class func applyImapFlagOperationWithRequestBuilder(emailId: UUID, imapFlagOperationOptions: ImapFlagOperationOptions) -> RequestBuilder<MSEmailPreview> {
         var localVariablePath = "/emails/{emailId}/imap-flag-operation"
         let emailIdPreEscape = "\(APIHelper.mapValueToPathItem(emailId))"
         let emailIdPostEscape = emailIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -60,7 +60,7 @@ import AnyCodable
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<EmailPreview>.Type = mailslurpAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<MSEmailPreview>.Type = mailslurpAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
@@ -1465,10 +1465,10 @@ import AnyCodable
      
      - parameter emailId: (path)  
      - parameter read: (query) What value to assign to email read property. Default true. (optional, default to true)
-     - returns: Promise<EmailPreview>
+     - returns: Promise<MSEmailPreview>
      */
-    open class func markAsRead( emailId: UUID,  read: Bool? = nil) -> Promise<EmailPreview> {
-        let deferred = Promise<EmailPreview>.pending()
+    open class func markAsRead( emailId: UUID,  read: Bool? = nil) -> Promise<MSEmailPreview> {
+        let deferred = Promise<MSEmailPreview>.pending()
         markAsReadWithRequestBuilder(emailId: emailId, read: read).execute { result in
             switch result {
             case let .success(response):
@@ -1489,9 +1489,9 @@ import AnyCodable
        - name: API_KEY
      - parameter emailId: (path)  
      - parameter read: (query) What value to assign to email read property. Default true. (optional, default to true)
-     - returns: RequestBuilder<EmailPreview> 
+     - returns: RequestBuilder<MSEmailPreview> 
      */
-    open class func markAsReadWithRequestBuilder(emailId: UUID, read: Bool? = nil) -> RequestBuilder<EmailPreview> {
+    open class func markAsReadWithRequestBuilder(emailId: UUID, read: Bool? = nil) -> RequestBuilder<MSEmailPreview> {
         var localVariablePath = "/emails/{emailId}/read"
         let emailIdPreEscape = "\(APIHelper.mapValueToPathItem(emailId))"
         let emailIdPostEscape = emailIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -1510,7 +1510,7 @@ import AnyCodable
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<EmailPreview>.Type = mailslurpAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<MSEmailPreview>.Type = mailslurpAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PATCH", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }

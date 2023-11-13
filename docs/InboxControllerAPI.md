@@ -859,7 +859,7 @@ Name | Type | Description  | Notes
 
 # **getEmails**
 ```swift
-    open class func getEmails( inboxId: UUID,  size: Int? = nil,  limit: Int? = nil,  sort: Sort_getEmails? = nil,  retryTimeout: Int64? = nil,  delayTimeout: Int64? = nil,  minCount: Int64? = nil,  unreadOnly: Bool? = nil,  before: Date? = nil,  since: Date? = nil) -> Promise<[EmailPreview]>
+    open class func getEmails( inboxId: UUID,  size: Int? = nil,  limit: Int? = nil,  sort: Sort_getEmails? = nil,  retryTimeout: Int64? = nil,  delayTimeout: Int64? = nil,  minCount: Int64? = nil,  unreadOnly: Bool? = nil,  before: Date? = nil,  since: Date? = nil) -> Promise<[MSEmailPreview]>
 ```
 
 Get emails in an Inbox. This method is not idempotent as it allows retries and waits if you want certain conditions to be met before returning. For simple listing and sorting of known emails use the email controller instead.
@@ -909,7 +909,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[EmailPreview]**](EmailPreview)
+[**[MSEmailPreview]**](MSEmailPreview)
 
 ### Authorization
 

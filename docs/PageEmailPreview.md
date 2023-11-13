@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**content** | [EmailPreview] |  | [optional] 
+**content** | [MSEmailPreview] |  | [optional] 
 **pageable** | [**PageableObject**](PageableObject) |  | [optional] 
 **total** | **Int64** |  | [optional] 
 **totalElements** | **Int64** |  | [optional] 

@@ -71,7 +71,7 @@ docs/EmailContentMatchResult.md
 docs/EmailControllerAPI.md
 docs/EmailHtmlDto.md
 docs/EmailLinksResult.md
-docs/EmailPreview.md
+docs/MSEmailPreview.md
 docs/EmailPreviewUrls.md
 docs/EmailProjection.md
 docs/EmailRecipients.md
@@ -365,7 +365,7 @@ mailslurp/Models/EmailAnalysis.swift
 mailslurp/Models/EmailContentMatchResult.swift
 mailslurp/Models/EmailHtmlDto.swift
 mailslurp/Models/EmailLinksResult.swift
-mailslurp/Models/EmailPreview.swift
+mailslurp/Models/MSEmailPreview.swift
 mailslurp/Models/EmailPreviewUrls.swift
 mailslurp/Models/EmailProjection.swift
 mailslurp/Models/EmailRecipients.swift

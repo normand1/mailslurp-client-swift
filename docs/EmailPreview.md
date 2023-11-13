@@ -1,4 +1,4 @@
-# EmailPreview
+# MSEmailPreview
 
 ## Properties
 Name | Type | Description | Notes
